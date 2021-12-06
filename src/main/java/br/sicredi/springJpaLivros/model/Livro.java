@@ -3,17 +3,24 @@ package br.sicredi.springJpaLivros.model;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Collection;
 
-@Entity
 @Getter
 @Setter
+@Entity
+@Table(name = "Livros")
 public class Livro {
+    @ManyToOne
+    @JoinColumn()
+    private Editora editora;
+
+    @ManyToMany
+    private Collection<Autor> autores;
+
     @Id
     @GeneratedValue
-    private Long codigo;
+    private Long codigoLivro;
     private String titulo;
     private int ano;
 
