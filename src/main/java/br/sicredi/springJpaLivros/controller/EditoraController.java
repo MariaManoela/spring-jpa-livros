@@ -29,4 +29,9 @@ public class EditoraController {
     public void cadastraEditora(@RequestBody Editora editora) {
         editoraService.save(editora);
     }
+
+    @DeleteMapping("/{id}")
+    public void deleteById(@PathVariable("id") Long id) {
+        editoraService.deleteById(id);
+    }
 }

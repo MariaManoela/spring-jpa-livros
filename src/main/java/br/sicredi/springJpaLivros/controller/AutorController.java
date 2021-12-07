@@ -28,4 +28,9 @@ public class AutorController {
     public void cadastraAutor(@RequestBody Autor autor) {
         autorService.save(autor);
     }
+
+    @DeleteMapping("/{id}")
+    public void deleteById(@PathVariable("id") Long id) {
+        autorService.deleteById(id);
+    }
 }

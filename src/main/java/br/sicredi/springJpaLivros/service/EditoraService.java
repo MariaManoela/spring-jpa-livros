@@ -24,4 +24,8 @@ public class EditoraService {
     public void save(Editora editora) {
         editoraRepository.save(editora);
     }
+
+    public void deleteById(Long id) {
+        editoraRepository.deleteById(id);
+    }
 }

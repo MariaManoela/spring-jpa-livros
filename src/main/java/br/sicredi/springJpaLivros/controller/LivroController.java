@@ -28,4 +28,9 @@ public class LivroController {
     public void cadastraLivro(@RequestBody Livro livro) {
         livroService.save(livro);
     }
+
+    @DeleteMapping("/{id}")
+    public void deleteById(@PathVariable("id") Long id) {
+        livroService.deleteById(id);
+    }
 }
