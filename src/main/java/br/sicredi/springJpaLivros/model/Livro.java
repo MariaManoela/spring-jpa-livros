@@ -12,7 +12,7 @@ import java.util.Collection;
 @Table(name = "Livros")
 public class Livro {
     @ManyToOne
-    @JoinColumn()
+    @JoinColumn(name = "codigoEditora")
     private Editora editora;
 
     @ManyToMany
