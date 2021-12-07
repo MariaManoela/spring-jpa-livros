@@ -11,7 +11,7 @@ import java.util.Collection;
 @Entity
 @Table(name = "Editoras")
 public class Editora {
-    @OneToMany (mappedBy = "editora")
+    @OneToMany (mappedBy = "editora",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Collection<Livro> livros;
 
     @Id

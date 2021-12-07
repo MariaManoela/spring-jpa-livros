@@ -14,7 +14,14 @@ import java.util.Collection;
 @Entity
 @Table(name = "Autores")
 public class Autor {
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+    @JoinTable(name = "autores_livros",
+            joinColumns = {
+                    @JoinColumn(name = "autor_id", referencedColumnName = "codigoAutor",
+                            nullable = false, updatable = false)},
+            inverseJoinColumns = {
+                    @JoinColumn(name = "livro_id", referencedColumnName = "codigoLivro",
+                            nullable = false, updatable = false)})
     private Collection<Livro> livros;
 
     @Id
