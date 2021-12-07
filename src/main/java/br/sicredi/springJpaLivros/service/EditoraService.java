@@ -1,5 +1,6 @@
 package br.sicredi.springJpaLivros.service;
 
+import br.sicredi.springJpaLivros.dto.EditoraDto;
 import br.sicredi.springJpaLivros.model.Editora;
 import br.sicredi.springJpaLivros.repository.EditoraRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ public class EditoraService {
         return editoraRepository.findById(id);
     }
 
-    public void save(Editora editora) {
+    public void save(EditoraDto editora) {
         editoraRepository.save(editora);
     }
 

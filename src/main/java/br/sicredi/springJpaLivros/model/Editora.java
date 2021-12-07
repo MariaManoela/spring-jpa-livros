@@ -11,11 +11,11 @@ import java.util.Collection;
 @Entity
 @Table(name = "Editoras")
 public class Editora {
-    @OneToMany (mappedBy = "editora",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany (mappedBy = "editora")//cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Collection<Livro> livros;
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long codigoEditora;
     private String nome;
 
