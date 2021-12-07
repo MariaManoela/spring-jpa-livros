@@ -1,13 +1,31 @@
 package br.sicredi.springJpaLivros.controller;
 
+import br.sicredi.springJpaLivros.model.Livro;
 import br.sicredi.springJpaLivros.service.LivroService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/livros")
 public class LivroController {
     @Autowired
     LivroService livroService;
+
+    @GetMapping
+    public List findAll() {
+        return livroService.findAll();
+    }
+
+    @GetMapping("/{id}")
+    public Optional findById(@PathVariable("id") Long id) {
+        return livroService.findById(id);
+    }
+
+    @PostMapping
+    public void cadastraLivro(@RequestBody Livro livro) {
+        livroService.save(livro);
+    }
 }
