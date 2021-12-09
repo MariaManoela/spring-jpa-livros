@@ -1,6 +1,5 @@
 package br.sicredi.springJpaLivros.controller;
 
-import br.sicredi.springJpaLivros.dto.EditoraDto;
 import br.sicredi.springJpaLivros.model.Editora;
 import br.sicredi.springJpaLivros.service.EditoraService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +25,7 @@ public class EditoraController {
     }
 
     @PostMapping
-    public void cadastraEditora(@RequestBody EditoraDto editora) {
+    public void cadastraEditora(@RequestBody Editora editora) {
         editoraService.save(editora);
     }
 

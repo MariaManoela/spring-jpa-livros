@@ -1,6 +1,6 @@
 package br.sicredi.springJpaLivros.controller;
 
-import br.sicredi.springJpaLivros.dto.LivroDto;
+import br.sicredi.springJpaLivros.model.Livro;
 import br.sicredi.springJpaLivros.service.LivroService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -25,7 +25,7 @@ public class LivroController {
     }
 
     @PostMapping
-    public void cadastraLivro(@RequestBody LivroDto livro) {
+    public void cadastraLivro(@RequestBody Livro livro) {
         livroService.save(livro);
     }
 

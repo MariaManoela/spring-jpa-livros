@@ -1,6 +1,6 @@
 package br.sicredi.springJpaLivros.service;
 
-import br.sicredi.springJpaLivros.dto.LivroDto;
+import br.sicredi.springJpaLivros.model.Livro;
 import br.sicredi.springJpaLivros.repository.LivroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -21,7 +21,7 @@ public class LivroService {
         return livroRepository.findById(id);
     }
 
-    public void save(LivroDto livro) {
+    public void save(Livro livro) {
         livroRepository.save(livro);
     }
 
